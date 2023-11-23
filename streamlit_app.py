@@ -6,10 +6,10 @@ st.set_page_config(page_title="📚💬 BookWise Chat")
 
 with st.sidebar:
     st.title('📚💬 BookWise Chat')
-    if ('EMAIL' in st.secrets) and ('PASS' in st.secrets):
+    if ('db_username' in st.secrets) and ('db_password' in st.secrets):
         st.success('HuggingFace Login credentials already provided!', icon='✅')
-        hf_email = st.secrets['EMAIL']
-        hf_pass = st.secrets['PASS']
+        hf_email = st.secrets['db_username']
+        hf_pass = st.secrets['db_password']
     else:
         hf_email = st.text_input('Enter E-mail:')
         hf_pass = st.text_input('Enter password:', type='password')
@@ -17,6 +17,8 @@ with st.sidebar:
             st.warning('Please enter your credentials!', icon='⚠️')
         else:
             st.success('Feeling indecisive about what to read? Let us help you discover the perfect book recommendation! 📚!', icon='👉')
+
+
 
       # Store LLM generated responses
 if "messages" not in st.session_state.keys():
