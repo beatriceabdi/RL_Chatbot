@@ -1,9 +1,9 @@
-# 📦 Streamlit App Starter Kit 
+# BookWise Chat
 ```
 ⬆️ (Replace above with your app's name)
 ```
 
-Description of the app ...
+Description of the app: Discover your next literary adventure with BookWise Chat, your friendly book recommendation companion. This user-friendly chatbot employs the power of Reinforcement Learning to provide personalized book suggestions tailored to your tastes. Simply ask for a recommendation, explore the suggestions, and choose your next page-turner. BookWise Chat not only helps you find the perfect book but also introduces a unique element of delayed rewards. Your choices shape future recommendations, creating a dynamic and evolving reading experience. Make reading decisions with confidence, guided by the intuitive suggestions of BookWise Chat.
 
 ## Demo App
 
