@@ -1,9 +1,13 @@
 import streamlit as st
+from streamlit_chat import message
+from streamlit_extras.colored_header import colored_header
+from streamlit_extras.add_vertical_space import add_vertical_space
 from hugchat import hugchat
 from hugchat.login import Login
 
 st.set_page_config(page_title="📚💬 BookWise Chat")
 
+# Sidebar contents
 with st.sidebar:
     st.title('📚💬 BookWise Chat')
     if ('EMAIL' in st.secrets) and ('PASS' in st.secrets):
@@ -11,7 +15,7 @@ with st.sidebar:
         hf_email = st.secrets['EMAIL']
         hf_pass = st.secrets['PASS']
     else:
-        hf_email = st.text_input('Enter E-mail:', type='password')
+        hf_email = st.text_input('Enter E-mail:')
         hf_pass = st.text_input('Enter password:', type='password')
         if not (hf_email and hf_pass):
             st.warning('Please enter your credentials!', icon='⚠️')
@@ -20,9 +24,14 @@ with st.sidebar:
 
 
 
-      # Store LLM generated responses
+# Store LLM generated responses
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "Hi there! What kind of book genre would you like me to recommend today?"}]
+
+# Layout of input/response containers
+input_container = st.container()
+colored_header(label='', description='', color_name='blue-30')
+response_container = st.container()
 
 
 # Display chat messages
@@ -34,8 +43,9 @@ for message in st.session_state.messages:
 # Function for generating LLM response
 def generate_response(prompt_input, email, passwd):
     # Hugging Face Login
-    sign = Login(email, passwd)
+    sign = Login(st.secrets["email"], st.secrets["password"])
     cookies = sign.login()
+    sign.saveCookies()
     # Create ChatBot                        
     chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
     return chatbot.chat(prompt_input)
