@@ -32,7 +32,7 @@ for message in st.session_state.messages:
 
 
 # Function for generating LLM response
-def generate_response(prompt_input, email, passwd):
+def generate_response(prompt_input, email, password):
     # Hugging Face Login
     sign = Login(st.secrets["db_email"], st.secrets["db_password"])
     cookies = sign.login()
