@@ -7,10 +7,10 @@ st.set_page_config(page_title="📚💬 BookWise Chat")
 # Sidebar contents
 with st.sidebar:
     st.title('📚💬 BookWise Chat')
-    if ('EMAIL' in st.secrets) and ('PASS' in st.secrets):
+    if ('db_email' in st.secrets) and ('db_password' in st.secrets):
         st.success('HuggingFace Login credentials already provided!', icon='✅')
-        hf_email = st.secrets['EMAIL']
-        hf_pass = st.secrets['PASS']
+        hf_email = st.secrets['db_email']
+        hf_pass = st.secrets['db_password']
     else:
         hf_email = st.text_input('Enter E-mail:')
         hf_pass = st.text_input('Enter password:', type='password')
@@ -32,7 +32,7 @@ for message in st.session_state.messages:
 
 
 # Function for generating LLM response
-def generate_response(prompt_input, email, password):
+def generate_response(prompt_input, db_email, db_password):
     # Hugging Face Login
     sign = Login(st.secrets["db_email"], st.secrets["db_password"])
     cookies = sign.login()
