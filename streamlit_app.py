@@ -1,6 +1,4 @@
 import streamlit as st
-from streamlit_extras.colored_header import colored_header
-from streamlit_extras.add_vertical_space import add_vertical_space
 from hugchat import hugchat
 from hugchat.login import Login
 
@@ -26,12 +24,6 @@ with st.sidebar:
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "Hi there! What kind of book genre would you like me to recommend today?"}]
-
-# Layout of input/response containers
-input_container = st.container()
-colored_header(label='', description='', color_name='blue-30')
-response_container = st.container()
-
 
 # Display chat messages
 for message in st.session_state.messages:
