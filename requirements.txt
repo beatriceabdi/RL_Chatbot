@@ -8,4 +8,3 @@ pyngrok==5.0.0
 transformers==4.11.0
 ydata_profiling==4.5.1
 pandas_profiling
-openpyxl
