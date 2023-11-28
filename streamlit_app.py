@@ -5,7 +5,6 @@ import streamlit as st
 
 with st.sidebar:
     "## SDSC4001 Group Project"
-    #"[View the source code](https://github.com/Jonathandika/llm-recommender-system)"
     "Members: "
     "SEIVABEL-JESSICA-HALIM"
     "NATASSA-CATALINA-BUNTARA"
