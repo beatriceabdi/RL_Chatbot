@@ -1,6 +1,6 @@
 import streamlit as st
 
-from modules.RetrievalAugmentedGenerator import RAG
+#from modules.RetrievalAugmentedGenerator import RAG
 
 
 with st.sidebar:
@@ -28,9 +28,14 @@ if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
 
-    recommendation_agent = RAG(user_id=user_id)
+    def ryan(prompt):
+        print("hello", prompt)
+        
+        return {
+            "output": "hello test"
+        }
 
-    response = recommendation_agent.agent(prompt)
+    response = ryan(prompt)
     print("REPONSE ===>", response)
     print("KEYS ===>", response.keys())
     
