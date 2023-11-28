@@ -5,7 +5,7 @@ import streamlit as st
 
 with st.sidebar:
     "## SDSC4001 Group Project"
-    "[View the source code](https://github.com/Jonathandika/llm-recommender-system)"
+    #"[View the source code](https://github.com/Jonathandika/llm-recommender-system)"
     "Members: "
     "SEIVABEL-JESSICA-HALIM"
     "NATASSA-CATALINA-BUNTARA"
@@ -20,7 +20,7 @@ st.caption("🚀Delayed Rewards Recommender System Chatbot")
 
 
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "Hi there! What kind of book genre would you like me to recommend today?"}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "Hi there! What kind of book would you like me to recommend today?"}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
