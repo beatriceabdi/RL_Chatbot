@@ -4,21 +4,23 @@ import streamlit as st
 
 
 with st.sidebar:
-    "## CS4480 Group Project"
+    "## SDSC4001 Group Project"
     "[View the source code](https://github.com/Jonathandika/llm-recommender-system)"
-    "Authors: "
-    "Jonathan Andika"
-    "Seivabel Jessica"
-    "Ryan Gani"
+    "Members: "
+    "SEIVABEL-JESSICA-HALIM"
+    "NATASSA-CATALINA-BUNTARA"
+    "PATRICIA-VIANNEY"
+    "Ivana JESSLYN"
+    "Beatrice ABDINEGARA"
 
     user_id = st.text_input("User ID", value="4614")
 
-st.title("💬 Chatbot")
-st.caption("🚀 LLM Recommender System Chatbot")
+st.title("📚💬 BookWise Chat")
+st.caption("🚀Delayed Rewards Recommender System Chatbot")
 
 
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "Hi there! What kind of book genre would you like me to recommend today?"}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
@@ -28,15 +30,15 @@ if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
 
-    def ryan(prompt):
-        print("hello", prompt)
+    def output(prompt):
+        #print("hello", prompt)
         
         return {
             "output": "hello test"
         }
 
-    response = ryan(prompt)
-    print("REPONSE ===>", response)
+    response = output(prompt)
+    print("RESPONSE ===>", response)
     print("KEYS ===>", response.keys())
     
     msg = {"role": "assistant", "content": response["output"]}
