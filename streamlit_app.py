@@ -33,7 +33,7 @@ if prompt := st.chat_input():
         #print("hello", prompt)
         
         {
-    "output": "Certainly! Here are some romance book recommendations:Pride and Prejudice by Jane Austen, A timeless classic exploring the complexities of love and societal expectations."
+    "output": "Certainly! Here are some romance book recommendations:"
         }
 
 
