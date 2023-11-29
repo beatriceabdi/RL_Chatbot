@@ -33,10 +33,7 @@ if prompt := st.chat_input():
         #print("hello", prompt)
         
         return {
-            "output": "Certainly! Here are some romance book recommendations: Pride and Prejudice by Jane Austen - A timeless classic exploring the complexities of love and societal expectations.
-            Outlander by Diana Gabaldon - A gripping tale of love, time travel, and adventure set in 18th-century Scotland.
-            To All the Boys I've Loved Before by Jenny Han - A sweet and funny story about love letters and unexpected romance.
-            The Fault in Our Stars by John Green - A poignant tale of love and loss, beautifully written for young adult readers."
+            "output": "Certainly! Here are some romance book recommendations:"
         }
 
     response = output(prompt)
