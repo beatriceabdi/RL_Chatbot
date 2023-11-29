@@ -12,7 +12,7 @@ with st.sidebar:
     "Ivana JESSLYN"
     "Beatrice ABDINEGARA"
 
-    user_id = st.text_input("User ID", value="4614")
+    #user_id = st.text_input("User ID", value="4614")
 
 st.title("📚💬 BookWise Chat")
 st.caption("🚀Delayed Rewards Recommender System Chatbot")
