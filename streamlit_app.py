@@ -15,7 +15,7 @@ with st.sidebar:
     #user_id = st.text_input("User ID", value="4614")
 
 st.title("📚💬 BookWise Chat")
-st.caption("🚀Delayed Rewards Recommender System Chatbot")
+st.caption("🚀DDQN Based Book Recommender System Chatbot")
 
 
 if "messages" not in st.session_state:
